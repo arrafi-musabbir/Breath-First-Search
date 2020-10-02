@@ -5,7 +5,7 @@
 
 '''
 
-with open("Weighted graph(cities).txt", "r") as f:
+with open("graph(cities).txt", "r") as f:
     l1 = list()
     d = dict()
     for i in f:
@@ -23,18 +23,18 @@ a graph of cities have been initialized in dictionary "d"
 print(d)
 
 
-def bfs(d, S, G):
+def bfs(dic, Start, Goal):
     visited = dict()
     que = list()
     path = list()
-    temp = S
+    temp = Start
     que.append(temp)
     while len(que) > 0:
         temp = que.pop(0)
         if temp not in visited.keys():
-            if d[temp] is not None:
-                for i in d[temp]:
-                    que.append(d[temp][i])
+            if dic[temp] is not None:
+                for i in dic[temp]:
+                    que.append(i)
                     print(i)
                 visited[temp] = 1
             else:
@@ -42,9 +42,9 @@ def bfs(d, S, G):
             path.append(temp)
         elif temp in visited.keys():
             visited[temp] = visited[temp] + 1
-        if temp == G:
+        if temp == Goal:
             break
-    if temp == G:
+    if temp == Goal:
         print("starting search-->", end=" ")
         for i in path:
             print(i, "-->", end=" ")
@@ -52,7 +52,6 @@ def bfs(d, S, G):
     if len(que) == 0:
         print("No path exist")
 
-    print(que)
+    #return que
 
-
-bfs(d, "a", "g")
+bfs(dic=d, Start="a", Goal="t")

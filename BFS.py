@@ -4,7 +4,7 @@
  the graph in a dictionary
 '''
 
-with open("graph(cities).txt", "r") as f:
+with open("Breath-First-Search\graph(cities).txt", "r") as f:
     l1 = list()
     d = dict()
     for i in f:
@@ -24,6 +24,7 @@ the following commented out code can be used to display the elements of "d"
 
 
 def bfs(dic, Start, Goal):
+    print("Running Breath First Search")
     que = list()   # to be used as a stack
     path = list()  # to keep track of the visited nodes
     temp = Start

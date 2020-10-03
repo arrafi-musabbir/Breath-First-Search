@@ -4,7 +4,7 @@
  the graph in a dictionary
 '''
 
-with open("Breath-First-Search\graph(cities).txt", "r") as f:
+with open("Breath-First-Search/graph(cities).txt", "r") as f:
     l1 = list()
     d = dict()
     for i in f:
